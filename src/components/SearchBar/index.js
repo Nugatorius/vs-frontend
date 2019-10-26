@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import TextInput from '../../shared/TextInput';
 import Button from '../../shared/Button';
 
-class SearchBar extends Component {
-  state = {
-    value: ''
+const SearchBar = () => {
+  const [value, setValue] = useState('')
+
+  const handleClick = () => {
+    console.log('Button click', value);
   }
 
-  handleClick = () => {
-    console.log('Button click', this.state.value);
-  }
-
-  handleChange = (value) => {
-    this.setState({value});
-  }
-
-  render() {
-    return (
-      <div>
-        <TextInput placeholder='Search Videos' handleChange={this.handleChange} value={this.state.value} />
-        <Button title='SEARCH' handleClick={this.handleClick} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <TextInput placeholder='Search Videos' handleChange={setValue} value={value} />
+      <Button title='SEARCH' handleClick={handleClick} />
+    </div>
+  );
 }
 
 export default SearchBar;
