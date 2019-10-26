@@ -7,11 +7,11 @@ class SearchBar extends Component {
     value: ''
   }
 
-  handleClick(){
+  handleClick = () => {
     console.log('Button click', this.state.value);
   }
 
-  handleChange(value){
+  handleChange = (value) => {
     this.setState({value});
   }
 
