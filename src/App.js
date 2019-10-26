@@ -1,10 +1,17 @@
 import React , { Fragment } from 'react';
 import SearchBar from './components/SearchBar';
+import VideoList from './components/VideoList';
+import {videos} from './mocks/videos'
 
-function App() {
+const App = () => {
+  const handleThumbnailClick = (videoId) => {
+    console.log('video id', videoId);
+  }
+
   return (
    <Fragment>
      <SearchBar />
+     <VideoList videos={videos} handleClick={handleThumbnailClick} />
    </Fragment>
   );
 }
